@@ -19,6 +19,14 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+app.MapControllerRoute(
+            name: "admin",
+            pattern: "{area:exists}/{controller}/{action}"
+          );
+app.MapControllerRoute(
+           name: "user",
+           pattern: "{area:exists}/{controller}/{action}"
+         );
 
 app.MapControllerRoute(
     name: "default",
